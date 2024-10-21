@@ -68,21 +68,35 @@
 					<img src="img/context.png" alt="" height="350px">
 					<p>useContext позволяет напрямую обратиться к необходимой переменной из родительского в дочернем элементе</p>
 				</section>
+			</section>
+			
+			
+			
+			
+			<section>
 				<section>
-					<h3 class="">useState()</h3>
-					<pre><code data-trim data-noescape>
-						import React, { useState } from 'react';
-						function Component(){
-							const [message, setMessage] = useState("bambam"); // по умолчанию
-							console.log(message) // "bambam";
-							
-							setMessage("tutu");
-							console.log(message) // "tutu";
-						}
-						  </code></pre>
-					<p>При изменении состояния обновляется компонент и перерисовывается заново</p>
+					<h2>Хуки оптимизации</h2>
+				</section>
+
+				<section>
+					<h3 class="">useMemo()</h3>
+					<img src="img/memo.png" alt="" height="350px">
+					<p>Используется для мемоизации значений. То есть, исключает повторное вычисление того, что уже было посчитано</p>
+				</section>
+				
+				<section>
+					<h3 class="">Suspense, lazy</h3>
+					<img src="img/lazy.png" alt="" height="350px">
+					<p>Suspence и lazy используются подгрузки компонентов только по необходимости. Используется для оптимизации приложения</p>
+				</section>
+				<section>
+					<h3 class="">useContext()</h3>
+					<img src="img/context.png" alt="" height="350px">
+					<p>useContext позволяет напрямую обратиться к необходимой переменной из родительского в дочернем элементе</p>
 				</section>
 			</section>
+		
+		
 		</div>
 	</div>
 
