@@ -1,40 +1,106 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+	<title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/WAG1.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-color="red">
+				<h1>
+					Ого, React
+				</h1>
+				<h2>
+					Однако, здравствуйте
+				</h2>
+			</section>
+			<section>
+				<section>
+					<h2>Хуки отрисовки</h2>
+				</section>
+				<section>
+					<h3 class="">useState()</h3>
+					<pre><code data-trim data-noescape>
+						import React, { useState } from 'react';
+						function Component(){
+							const [message, setMessage] = useState("bambam"); // по умолчанию
+							console.log(message) // "bambam";
+							
+							setMessage("tutu");
+							console.log(message) // "tutu";
+						}
+						  </code></pre>
+					<p>При изменении состояния обновляется компонент и перерисовывается заново</p>
+				</section>
+				<section>
+					<h3 class="">useEffect()</h3>
+					<pre><code data-trim data-noescape>
+						import React, { useState, useEffect } from 'react';
+						function Component(){
+							const [boolValue, setBoolValue] = useState(false);
+							useEffect(()=>{
+								console.log("bebe")
+								if(boolValue){
+									console.log("it's true!")
+								}
+							}, [boolValue]) // Зависимости
+
+							setBoolValue(!boolValue); // После этой строки хук сработает ещё раз
+						}
+						  </code></pre>
+					<p>useEffect отрабатывает при первом рендере компонента, а при изменении элемента в массиве
+						зависимостей (boolValue) перерисовывает компонент с новыми значениями</p>
+				</section>
+				<section>
+					<h3 class="">useContext()</h3>
+					<img src="img/context.png" alt="" height="350px">
+					<p>useContext позволяет напрямую обратиться к необходимой переменной из родительского в дочернем элементе</p>
+				</section>
+				<section>
+					<h3 class="">useState()</h3>
+					<pre><code data-trim data-noescape>
+						import React, { useState } from 'react';
+						function Component(){
+							const [message, setMessage] = useState("bambam"); // по умолчанию
+							console.log(message) // "bambam";
+							
+							setMessage("tutu");
+							console.log(message) // "tutu";
+						}
+						  </code></pre>
+					<p>При изменении состояния обновляется компонент и перерисовывается заново</p>
+				</section>
+			</section>
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+	<script src="dist/reveal.js"></script>
+	<script src="plugin/notes/notes.js"></script>
+	<script src="plugin/markdown/markdown.js"></script>
+	<script src="plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
 </html>
