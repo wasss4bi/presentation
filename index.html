@@ -1,115 +1,201 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>reveal.js</title>
 
-	<title>reveal.js</title>
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/WAG1.css" />
 
-	<link rel="stylesheet" href="dist/reset.css">
-	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/WAG1.css">
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
 
-	<!-- Theme used for syntax highlighted code -->
-	<link rel="stylesheet" href="plugin/highlight/monokai.css">
-</head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-color="red">
+          <h3>Таблица принятия решений</h3>
+          <h4>Поздняков Дмитрий, 41 ИСР</h4>
+        </section>
+        <section>
+          <section>
+            <h3 class="">Что это?</h3>
+            <p>
+              Таблица принятия решений - инструмент тестирования, который
+              объединяет условия в удобочитаемую таблицу, позволяющую быстро выявлять баги
+            </p>
+          </section>
+          <section>
+            <h3 class="">Когда используется?</h3>
+            <p>
+              Таблица принятия решений используется, когда
+              необходимо провести немало тестов, при этом сделать это
+              быстро и без надобности удерживать в голове всех тонкостей
+              тестирования
+            </p>
+          </section>
+          <section>
+            <h3 class="">Пример</h3>
+			<p>Проверка человека при взятии на работу</p>
+            <table class="table-text">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Тест 1</th>
+                  <th>Тест 2</th>
+                  <th>Тест 3</th>
+                  <th>Тест 4</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Условия</b></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Стаж работы 3 года</td>
+                  <td>Да</td>
+                  <td>Да</td>
+                  <td>Нет</td>
+                  <td>Нет</td>
+                </tr>
+                <tr>
+                  <td>Есть семья</td>
+                  <td>Да</td>
+                  <td>Нет</td>
+                  <td>Да</td>
+                  <td>Нет</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>Результат</b></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Взят на работу?</td>
+                  <td>Да</td>
+                  <td>Да</td>
+                  <td>Да</td>
+                  <td>Нет</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section>
+            <h3 class="">Пример 2</h3>
+			<p>Вычисление скидки для покупателя при покупке товаров в магазине</p>
+            <table class="table-text">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Тест 1</th>
+                  <th>Тест 2</th>
+                  <th>Тест ...</th>
+                  <th>Тест n</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Условия</b></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Потратил</td>
+                  <td>>100</td>
+                  <td>>200</td>
+                  <td>...</td>
+                  <td>>1500</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><b>Результат</b></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Скидка (Потратил/50, максимум 30%)</td>
+                  <td>2%</td>
+                  <td>4%</td>
+                  <td>...</td>
+                  <td>30%</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
 
-<body>
-	<div class="reveal">
-		<div class="slides">
-			<section data-color="red">
-				<h1>
-					Ого, React
-				</h1>
-				<h2>
-					Однако, здравствуйте
-				</h2>
-			</section>
-			<section>
-				<section>
-					<h2>Хуки отрисовки</h2>
-				</section>
-				<section>
-					<h3 class="">useState()</h3>
-					<pre><code data-trim data-noescape>
-						import React, { useState } from 'react';
-						function Component(){
-							const [message, setMessage] = useState("bambam"); // по умолчанию
-							console.log(message) // "bambam";
-							
-							setMessage("tutu");
-							console.log(message) // "tutu";
-						}
-						  </code></pre>
-					<p>При изменении состояния обновляется компонент и перерисовывается заново</p>
-				</section>
-				<section>
-					<h3 class="">useEffect()</h3>
-					<pre><code data-trim data-noescape>
-						import React, { useState, useEffect } from 'react';
-						function Component(){
-							const [boolValue, setBoolValue] = useState(false);
-							useEffect(()=>{
-								console.log("bebe")
-								if(boolValue){
-									console.log("it's true!")
-								}
-							}, [boolValue]) // Зависимости
+        <section>
+          <h3 class="">Алгоритм применения</h3>
+          <ul>
+            <li>В первый столбец выписать все входные данные для тестирования</li>
+            <li>Написать действие в последних строках, описывающее происходящее с входными данными</li>
+            <li>Для каждого тест-кейса создаём свой столбец и заполняем входные данные</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <h3 class="">Плюсы</h3>
+            <ul>
+              <li>Наглядность - удобнее таблицы ещё не придумали способа структурирования информации</li>
+              <li>Удобство отслеживания багов</li>
+              <li>Все тест-кейсы видны практически на одном экране</li>
+            </ul>
+          </section>
+          <section>
+            <h3 class="">Минусы</h3>
+            <ul>
+              <li>Может быть избыточным решением для слишком маленького проекта</li>
+              <li>Если будет очень много вводных данных, таблица получится очень большой</li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </div>
 
-							setBoolValue(!boolValue); // После этой строки хук сработает ещё раз
-						}
-						  </code></pre>
-					<p>useEffect отрабатывает при первом рендере компонента, а при изменении элемента в массиве
-						зависимостей (boolValue) перерисовывает компонент с новыми значениями</p>
-				</section>
-				<section>
-					<h3 class="">useContext()</h3>
-					<img src="img/context.png" alt="" height="350px">
-					<p>useContext позволяет напрямую обратиться к необходимой переменной из родительского в дочернем элементе</p>
-				</section>
-			</section>
-			
-			
-			
-			
-			<section>
-				<section>
-					<h2>Хуки оптимизации</h2>
-				</section>
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
 
-				<section>
-					<h3 class="">useMemo()</h3>
-					<img src="img/memo.png" alt="" height="350px">
-					<p>Используется для мемоизации значений. То есть, исключает повторное вычисление того, что уже было посчитано</p>
-				</section>
-				
-				<section>
-					<h3 class="">Suspense, lazy</h3>
-					<img src="img/lazy.png" alt="" height="350px">
-					<p>Suspence и lazy используются подгрузки компонентов только по необходимости. Используется для оптимизации приложения</p>
-				</section>
-			</section>
-		
-		
-		</div>
-	</div>
-
-	<script src="dist/reveal.js"></script>
-	<script src="plugin/notes/notes.js"></script>
-	<script src="plugin/markdown/markdown.js"></script>
-	<script src="plugin/highlight/highlight.js"></script>
-	<script>
-		// More info about initialization & config:
-		// - https://revealjs.com/initialization/
-		// - https://revealjs.com/config/
-		Reveal.initialize({
-			hash: true,
-
-			// Learn about plugins: https://revealjs.com/plugins/
-			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
-		});
-	</script>
-</body>
-
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
