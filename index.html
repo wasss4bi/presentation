@@ -19,79 +19,64 @@
 	<div class="reveal">
 		<div class="slides">
 			<section data-color="red">
-				<h1>
-					Ого, React
-				</h1>
 				<h2>
-					Однако, здравствуйте
+					Ого, TS LS и LSP!
 				</h2>
+				<h3>
+					Однако, здравствуйте
+				</h3>
 			</section>
 			<section>
 				<section>
-					<h2>Хуки отрисовки</h2>
+					<h3 class="">LSP</h3>
+					<p>LSP - Language Server Protocol - это протокол, помогающий IDE общаться с разными языками программирования с помощью сервера</p>
 				</section>
 				<section>
-					<h3 class="">useState()</h3>
-					<pre><code data-trim data-noescape>
-						import React, { useState } from 'react';
-						function Component(){
-							const [message, setMessage] = useState("bambam"); // по умолчанию
-							console.log(message) // "bambam";
-							
-							setMessage("tutu");
-							console.log(message) // "tutu";
-						}
-						  </code></pre>
-					<p>При изменении состояния обновляется компонент и перерисовывается заново</p>
+					<h3 class="">TS LS</h3>
+					<p>TS LS - TypeScript Language Server - Один из серверов, к которому обращается IDE через LSP. Конкретно этот обеспечивает для IDE комфортную работу с TypeScript и JavaScript</p>
 				</section>
-				<section>
-					<h3 class="">useEffect()</h3>
-					<pre><code data-trim data-noescape>
-						import React, { useState, useEffect } from 'react';
-						function Component(){
-							const [boolValue, setBoolValue] = useState(false);
-							useEffect(()=>{
-								console.log("bebe")
-								if(boolValue){
-									console.log("it's true!")
-								}
-							}, [boolValue]) // Зависимости
-
-							setBoolValue(!boolValue); // После этой строки хук сработает ещё раз
-						}
-						  </code></pre>
-					<p>useEffect отрабатывает при первом рендере компонента, а при изменении элемента в массиве
-						зависимостей (boolValue) перерисовывает компонент с новыми значениями</p>
-				</section>
-				<section>
-					<h3 class="">useContext()</h3>
-					<img src="img/context.png" alt="" height="350px">
-					<p>useContext позволяет напрямую обратиться к необходимой переменной из родительского в дочернем элементе</p>
-				</section>
+<!-- 				<section>
+					<p>Под комфортной работой подразумевается поиск синтаксических ошибок, рефакторинг, проверка типов, автодополнение, извлечение методов из классов и т.д.</p>
+				</section> -->
 			</section>
-			
-			
-			
-			
 			<section>
 				<section>
-					<h2>Хуки оптимизации</h2>
+					<h3 class="">Алгоритм</h3>
+					<ul>
+						<li>IDE хочет помочь найти ошибки в синтаксисе языка и отправляет запрос на сервер</li>
+						<li>Запрос летит по LSP и достигает нужного сервера</li>
+						<li>Сервер указывает на ошибки и обратно по LSP отправляет их на сервер</li>
+						<li>В IDE подсвечиваются ошибки</li>
+					</ul>
 				</section>
 
 				<section>
-					<h3 class="">useMemo()</h3>
-					<img src="img/memo.png" alt="" height="350px">
-					<p>Используется для мемоизации значений. То есть, исключает повторное вычисление того, что уже было посчитано</p>
-				</section>
-				
-				<section>
-					<h3 class="">Suspense, lazy</h3>
-					<img src="img/lazy.png" alt="" height="350px">
-					<p>Suspence и lazy используются подгрузки компонентов только по необходимости. Используется для оптимизации приложения</p>
+					<h3 class="">Схематично</h3>
+					<pre>
+						<code data-trim data-noescape>
+									 					TypeScript Language Server - JS и TS
+														Python Language Server - Python
+						IDE <-> LSP <->	Intelephense - PHP
+														Java Language Server - Java
+														clangd - C и C++
+						</code>
+					</pre>
+					<span>Существует множество разных LSP серверов</span>
 				</section>
 			</section>
-		
-		
+			<section>
+				<section>
+					<h2>Примеры</h2>
+					<img src="img/extjss.png" alt="" width="350px">
+					<img src="img/extjs.png" alt="" width="350px">
+				</section>
+				<section>
+					<img src="img/phpClassProps.png" alt="" width="350px">
+					<img src="img/phpPropReferences.png" alt="" width="350px">
+				</section>
+			</section>
+
+
 		</div>
 	</div>
 
