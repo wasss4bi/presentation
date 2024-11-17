@@ -20,7 +20,7 @@
 		<div class="slides">
 			<section data-color="red">
 				<h2>
-					Ого, TS LS и LSP!
+					Ого, LSP!
 				</h2>
 				<h3>
 					Однако, здравствуйте
@@ -29,13 +29,20 @@
 			<section>
 				<section>
 					<h3 class="">LSP</h3>
-					<p>LSP - Language Server Protocol - это протокол, помогающий IDE общаться с разными языками программирования с помощью сервера</p>
+					<p>LSP - Language Server Protocol - это протокол, помогающий IDE общаться с разными языками
+						программирования с помощью сервера</p>
 				</section>
 				<section>
 					<h3 class="">TS LS</h3>
-					<p>TS LS - TypeScript Language Server - Один из серверов, к которому обращается IDE через LSP. Конкретно этот обеспечивает для IDE комфортную работу с TypeScript и JavaScript</p>
+					<p>TS LS - TypeScript Language Server - Один из серверов, к которому обращается IDE через LSP.
+						Конкретно этот обеспечивает для IDE комфортную работу с TypeScript и JavaScript</p>
 				</section>
-<!-- 				<section>
+				<section>
+					<h3 class="">CSS LS</h3>
+					<p>CSS LS - Cascading Style Sheet Language Server - Также один из серверов, к которому обращается
+						IDE через LSP. Он обеспечивает для IDE комфортную работу с CSS</p>
+				</section>
+				<!-- 				<section>
 					<p>Под комфортной работой подразумевается поиск синтаксических ошибок, рефакторинг, проверка типов, автодополнение, извлечение методов из классов и т.д.</p>
 				</section> -->
 			</section>
@@ -67,16 +74,58 @@
 			<section>
 				<section>
 					<h2>Примеры</h2>
+				</section>
+				<section>
+					<h2>JS</h2>
 					<img src="img/extjss.png" alt="" width="350px">
 					<img src="img/extjs.png" alt="" width="350px">
 				</section>
 				<section>
+					<h2>PHP</h2>
 					<img src="img/phpClassProps.png" alt="" width="250px">
-					<img src="img/phpPropReferences.png" alt="" width="450px">
+					<img src="img/phpPropReferences.png" alt="" width="400px">
+				</section>
+				<section>
+					<h2>CSS</h2>
+					<img src="img/css1.png" alt="" width="400px">
 				</section>
 			</section>
-
-
+			<section>
+				<section>
+					<h2>Emmet</h2>
+					<p>Emmet - встроенный в vs code инструмент для быстрого написания HTML и CSS</p>
+				</section>
+				<section>
+					<h2>
+						HTML
+					</h2>
+					<pre>
+						<code data-trim data-noescape>
+							! - создаст базовую структуру html
+							h1{heading} - создаст заголовок h1 со словом heading
+							p>lorem10 - создаст тег p с 10 словами из lorem ipsum
+							div.block - создаст div с классом block
+							div#block - создаст div с id block
+							div>p - создаст div с тегом p внутри себя
+							ul>li*5 - создаст блок списка с пятью элементами
+						</code>
+					</pre>
+					<p>Такой подход позволяет очень сильно ускорить процесс вёрстки.<br>Я бы сдал дай бог на троечку
+						зимний экз на третьем курсе, если бы не родной братишка эммет</p>
+				</section>
+				<section>
+					<h2>CSS</h2>
+					<pre>
+						<code data-trim data-noescape>
+							p10 - padding:10px;
+							m10 - margin:10px;
+							w10 - width:10px;
+							h10 - height:10px;
+							c#666 - color:#666
+						</code>
+					</pre>
+				</section>
+			</section>
 		</div>
 	</div>
 
